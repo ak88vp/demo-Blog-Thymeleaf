@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p><a th:href="@{/blogs/create}">Thêm</a></p>
+<table>
+    <tr>
+        <td>id</td>
+        <td>title</td>
+        <td>content</td>
+        <td>category</td>
+        <td>edit</td>
+        <td>delete</td>
+    </tr>
+    <tr th:each="blog,index:${blogs}">
+        <td th:text="${blog.getId()}"></td>
+        <td th:text="${blog.getTitle()}"></td>
+        <td th:text="${blog.getContent()}"></td>
+        <td th:text="${categorys.get(index.index).getName()}"></td>
+        <td><a th:href="@{/blogs/edit?id=__${blog.getId()}__} "> edit</a></td>
+        <td><a th:href="@{/blogs/delete?id=__${blog.getId()}__} "  onclick="if (confirm('Delete selected item?')){return true;}else{event.stopPropagation(); event.preventDefault();};" title="Link Title"> delete</a></td>
+
+    </tr>
+</table>
+</body>
+</html>

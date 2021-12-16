@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    <input type="text" name="id" th:value="${blog.getId()}" >
+    <input type="text" name="title" th:value="${blog.getTitle()}" >
+    <input type="text" name="content" th:value="${blog.getContent()}" >
+    <input type="text" name="idCategory" th:value="${blog.getIdCategory()}" >
+    <button> sửa</button>
+</form>
+
+</body>
+</html>
